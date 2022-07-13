@@ -35,6 +35,16 @@ module.exports = {
     overlay: {
       warnings: false,
       errors: true
+    },
+    proxy: {
+      // 反向代理
+      '/abc': {
+        target: 'http://ihrm.itheima.net/',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/abc': ''
+        }
+      }
     }
     // before: require('./mock/mock-server.js') // 不需要模拟数据
   },
